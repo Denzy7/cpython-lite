@@ -3,7 +3,7 @@
 A lightweight and easy way to build and embed python to applications
 # building
 
-Tested on a Linux system using:
+Tested on an Arch Linux system using:
 - mingw-w64-gcc 11.2.0-1 (Win32)
 - GCC gcc 11.1.0-1 (Linux64)
 - Clang 12.0.1 (Android armeabi-v7a)
