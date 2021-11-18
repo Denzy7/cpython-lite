@@ -6,11 +6,13 @@
 
 void init_py()
 {
+	//Python flags to prevent loading some unneeded stuff
 	Py_NoSiteFlag = 1;
 	Py_FrozenFlag = 1;
 	Py_IgnoreEnvironmentFlag = 1;
 
     printf("loading libs\n");
+	//Try to create a test file to see if directory is writable
     printf("mock file\n");
     const char* bootstrap_d2 = bootstrap_d "/ok.txt";
     
@@ -28,11 +30,11 @@ if(!fff)
     printf("mock file done\n");
     
     
-    
+    //Decode locale
     wchar_t* home = Py_DecodeLocale(bootstrap_d, NULL);
-
+	//Set path to bootstrap
     Py_SetPath(home);
-	
+	//Start interprator
     Py_Initialize();
 
 //Import hook for embedding python and wanting to hardcode packages (optional)
