@@ -41,4 +41,6 @@ The main executable looks for a bootstrap directory next to it so ensure you ext
 # porting
 
 If you want to create a new platform config files, you will need a copy of the existing `pyconfig.h`. If porting a similar platform to those in [config](config), just change the defines such as `SIZEOF_INT` to match the said platform. You can also build [the config tool](config/pyconfig-tool.c) and run it on the target machine to get a list of define to change.  
-Its also possible for UNIX platforms to share `config.c` files. Be sure to use the `config.c` file for modules. Win32 needs the `config.c` [here](config/win32) to initialize Windows specific modules.
+Its also possible for UNIX platforms to share `config.c` files. Be sure to use the `config.c` file for modules. Win32 needs the `config.c` [here](config/win32) to initialize Windows specific modules.  
+
+The [library CMakeLists.txt](cmake-files/CMakeLists.txt) can offer some insights and tips for porting.
