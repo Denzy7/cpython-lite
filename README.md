@@ -13,6 +13,7 @@ Tested on an Arch Linux system using:
 
 Download an official tarball from [the Python website](https://www.python.org/downloads/source/) (which is recommended)  
 Version 3.9.4 has been thoroughly tested and is the recommended tarball  
+
 You can also clone this repository recursively (which may take a long time)  
 `git clone --recursive https://github.com/Denzy7/cpython-lite`  
 If you cloned recursively adjust CMakeLists.txt to point where you cloned python. Otherwise, change the version numbers to the version of the downloaded and extracted tarball
