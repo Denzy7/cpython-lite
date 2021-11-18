@@ -36,6 +36,8 @@ You can find various bootstrapping packages in [the bootstrap directory](bootstr
 Use [the win32 package](bootstraping/bootstrap-packaging-win32.tar.xz) for a portable solution. You can also use the basic versions but keep in mind it will not work well with embedding especially if using packages i.e. `import <package>.<embedded_module>`  
 You can also use a standard python install to bootstrap. However its much better to use a bootstrap package to keep the disk usage minimal  
 
+The main executable looks for a bootstrap directory next to it so ensure you extract a bootstrap package there or copy a Python library there.
+
 # porting
 
 If you want to create a new platform config files, you will need a copy of the existing `pyconfig.h`. If porting a similar platform to those in [config](config), just change the defines such as `SIZEOF_INT` to match the said platform. You can also build [the config tool](config/pyconfig-tool.c) and run it on the target machine to get a list of define to change.  
