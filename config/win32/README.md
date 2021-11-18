@@ -12,9 +12,9 @@ Just ensure you use regular `cmake --build <out-of-tree-dir>` when building.
 Copy the built python dll next to the executable
 
 Finally, copy the mingw librarires next to the executable (they are located in /usr/<i686 or x86_x64>/bin
-- libssp-0.dll
-- libwinpthread-1.dll
-- libgcc_s_dw2-1.dll(i686 32-bit) or libgcc_s_seh-1.dll (x86_x64 64-bit)
+- libssp.dll
+- libwinpthread.dll
+- libgcc_s_dw2.dll(i686 32-bit) or libgcc_s_seh.dll (x86_x64 64-bit)
 
 When running the executable on a fresh install of Windows 7 or earlier, you may be missing api-ms-core-path.dll. Installing Visual C++ and Windows Runtimes to fix this issue.  
 You may also consider copying one next to executable.
