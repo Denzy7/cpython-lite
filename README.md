@@ -6,7 +6,7 @@ A lightweight and easy way to build and embed python to applications
 Tested on an Arch Linux system using:
 - mingw-w64-gcc 11.2.0-1 (Win32)
 -   [mingw-w64-cmake](https://aur.archlinux.org/packages/mingw-w64-cmake) - CMake wrapper for MinGW
--   [mingw-w64-environment](https://aur.archlinux.org/mingw-w64-environment) - Environment wrapper
+-   [mingw-w64-environment](https://aur.archlinux.org/packages/mingw-w64-environment) - Environment wrapper
 -   [mingw-w64-pkg-config](https://aur.archlinux.org/packages/mingw-w64-pkg-config) - pkg-config wrapper
 - GCC gcc 11.1.0-1 (Linux64)
 - Clang 12.0.1 (Android armeabi-v7a)
