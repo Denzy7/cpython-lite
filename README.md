@@ -29,14 +29,14 @@ If configuration succeeds, build the source
 `cmake --build <out-of-tree-build-directory>`  
 You can also pass extra options to speed up builds ( `-j$(nproc)` )
 
-#bootstrapping
+# bootstrapping
 
 Once a build is complete, you need to bootstrap a standard python library for python to use. It contains the basic python scripts python needs to start up.  
 You can find various bootstrapping packages in [the bootstrap directory](bootstrap).  
 Use [the win32 package](bootstraping/bootstrap-packaging-win32.tar.xz) for a portable solution. You can also use the basic versions but keep in mind it will not work well with embedding especially if using packages i.e. `import <package>.<embedded_module>`  
 You can also use a standard python install to bootstrap. However its much better to use a bootstrap package to keep the disk usage minimal  
 
-#porting
+# porting
 
 If you want to create a new platform config files, you will need a copy of the existing `pyconfig.h`. If porting a similar platform to those in [config](config), just change the defines such as `SIZEOF_INT` to match the said platform. You can also build [the config tool](config/pyconfig-tool.c) and run it on the target machine to get a list of define to change.  
 Its also possible for UNIX platforms to share `config.c` files. Be sure to use the `config.c` file for modules. Win32 needs the `config.c` [here](config/win32) to initialize Windows specific modules.
