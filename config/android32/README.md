@@ -1,4 +1,4 @@
-Build using NDK r21 or later. Older versions have not been tested.
+Build using NDK r21 or later. Older versions have not been tested.   
 It's important you build with API 24 (Android v7.0). Some functions were added to android libc in 21 and some python modules rely on them.
 Configure the tree with
 `cmake -S . -B <out-of-tree-build> -DCMAKE_TOOLCHAIN_FILE=<NDK_DIR>/build/cmake/android.toolchain.cmake -DANDROID_PLATFORM=24`
