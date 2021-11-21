@@ -19,7 +19,7 @@ If not installed use:
 
 **Its common for Termux mirrors to change (or break), consider getting the** [latest mirrors](https://github.com/termux/termux-packages/wiki/Mirrors). Use primary hosts main mirror
 
-Please checkout [releases](../../releases) and use the url's to the release in `wget` e.g.  
+Please checkout [releases](../../../../releases) and use the url's to the release in `wget` e.g.  
 `wget https://github.com/Denzy7/cpython-lite/releases/download/v3.9.4-py-lite/py-lite-3.9.4-android_armeabi_v7a.tar.xz`  
 `tar -xvf py-lite-3.9.4-android_armeabi_v7a.tar.xz`
 
