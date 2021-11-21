@@ -1,3 +1,5 @@
+# building
+
 Build with mingw-w64. MSVC hasn't been tested but that's what upstream python uses for PC builds.  
 
 It very important you build shared not static. This avoid some very annoying link errors when linking the executable.  
@@ -15,6 +17,8 @@ Finally, copy the mingw librarires next to the executable (they are located in `
 - libssp.dll
 - libwinpthread.dll
 - libgcc_s_dw2.dll(i686 32-bit) or libgcc_s_seh.dll (x86_x64 64-bit)
+
+# running
 
 When running the executable on a fresh install of Windows 7 or earlier, you may be missing api-ms-core-path.dll. Installing Visual C++  and Windows Runtimes to fix this issue.  
 You may also consider copying one next to executable.
