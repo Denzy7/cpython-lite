@@ -22,9 +22,10 @@ Copy [the CMakeLists.txt](cmake-python/CMakeLists.txt) to the directory with pyt
 `ln -s <full-path-to-cmakelists.txt> <full-path-to-python-directory>`  
 
 Now configure the source  
-`cmake -S . -B <out-of-tree-build-directory>`
+**If configuring for another system other than x86_x64 Linux (linux64), see the various platform-specific tips in** [configs directory](config) 
 
-If configuring for another system other than x86_x64 Linux (linux64), see the various platform-specific tips in [configs directory](config)  
+`cmake -S . -B <out-of-tree-build-directory>`
+ 
 This checks if valid configuration files are available for the system you want to build for. Check for valid config files in the [configs directory](config/)  
 
 If configuration succeeds, build the source  
