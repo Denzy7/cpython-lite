@@ -9,12 +9,15 @@ See [android abis](https://developer.android.com/ndk/guides/cmake#android_abi)
 If embedding to and android app, Android studio automatically detects the target platform with gradle option `abiFilters 'x86', 'armeabi-v7a'`  
 Use gradle option `minSdkVersion 24` to build for Android 7.0
 
+
+# running
+
 To run `py-lite` (main executable) use a terminal emulator like [Termux](https://play.google.com/store/apps/details?id=com.termux)  
 To dodge Android file permissions (if phone is not rooted), consider getting the build executable with tools like `wget` in Termux.  
 If not installed use:  
 `pkg install wget`
 
-Its common for Termux mirrors to change (or break), consider getting the [latest mirrors](https://github.com/termux/termux-packages/wiki/Mirrors)
+**Its common for Termux mirrors to change (or break), consider getting the** [latest mirrors](https://github.com/termux/termux-packages/wiki/Mirrors). Use primary hosts main mirror
 
 Now extract a [bootstrap package](cpython-lite/bootstrapping) next to the executable:  
 `tar -xvf <package>.tar.xz`
