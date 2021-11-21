@@ -19,7 +19,7 @@ If not installed use:
 
 **Its common for Termux mirrors to change (or break), consider getting the** [latest mirrors](https://github.com/termux/termux-packages/wiki/Mirrors). Use primary hosts main mirror
 
-Now extract a [bootstrap package](../../bootstrapping) next to the executable:  
+Now extract a [bootstrap package](../../bootstraping) next to the executable:  
 `tar -xvf <package>.tar.xz`
 
 Run with:  
