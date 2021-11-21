@@ -1,3 +1,5 @@
+# building
+
 Build using NDK r21 or later. Older versions have not been tested.  
 It's important you build with API 24 (Android v7.0). Some functions were added to android libc in 24 and some python modules rely on them.  
 Configure the tree with:  
