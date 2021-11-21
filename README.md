@@ -34,7 +34,7 @@ You can also pass extra options to speed up builds ( `-j$(nproc)` )
 # bootstrapping
 
 Once a build is complete, you need to bootstrap a standard python library for python to use. It contains the basic python scripts python needs to start up.  
-You can find various bootstrapping packages in [the bootstrap directory](bootstrap).  
+You can find various bootstrapping packages in [the bootstrap directory](bootstraping).  
 
 Use [the win32 package](bootstraping/bootstrap-packaging-win32.tar.xz) for a portable solution. You can also use the basic versions but keep in mind it will not work well with embedding especially if using packages i.e. `import <package>.<embedded_module>`  
 You can also use a standard python install to bootstrap. However its much better to use a bootstrap package to keep the disk usage minimal  
