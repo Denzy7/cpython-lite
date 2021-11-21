@@ -7,4 +7,16 @@ This builds a 32-bit (armeabi-v7a) python executable and library. To build for o
 See [android abis](https://developer.android.com/ndk/guides/cmake#android_abi)
 
 If embedding to and android app, Android studio automatically detects the target platform with gradle option `abiFilters 'x86', 'armeabi-v7a'`  
-Use gradle option `minSdkVersion=24` to build for Android 7.0
+Use gradle option `minSdkVersion 24` to build for Android 7.0
+
+To run `py-lite` (main executable) use a terminal emulator like [Termux](https://play.google.com/store/apps/details?id=com.termux)  
+To dodge Android file permissions (if phone is not rooted), consider getting the build executable with tools like `wget` in Termux.  
+If not installed use:  
+`pkg install wget`
+
+Now extract a [bootstrap package](cpython-lite/bootstrapping) next to the executable:  
+`tar -xvf <package>.tar.xz`
+
+Run with:  
+`./py-lite`
+
