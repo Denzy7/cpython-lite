@@ -1,0 +1,12 @@
+--- Python-3.9.4/Modules/posixmodule.c	2021-04-04 15:56:53.000000000 +0300
++++ config/posixmodule.c	2021-11-21 19:52:40.409249038 +0300
+@@ -295,6 +295,9 @@
+ #  define HAVE_OPENDIR    1
+ #  define HAVE_SYSTEM     1
+ #  include <process.h>
++//Mingw support, osdefs.h ALTSEP define
++#elif __MINGW32__
++#define ALTSEP L'/'
+ #else
+ #  ifdef _MSC_VER
+      /* Microsoft compiler */
