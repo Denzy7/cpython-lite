@@ -19,7 +19,10 @@ You can also clone this repository recursively (which may take a long time)
 If you cloned recursively adjust CMakeLists.txt to point where you cloned python. Otherwise, change the version numbers to the version of the downloaded and extracted tarball.
 
 Copy [the CMakeLists.txt](cmake-python/CMakeLists.txt) to the directory with python (symlinks also work if on a Linux system)  
-`ln -s <full-path-to-cmakelists.txt> <full-path-to-python-directory>`  
+`ln -s <full-path-to-cmakelists.txt> <full-path-to-python-directory>` 
+
+Patch posixmodule.c if you will be compiling on MinGW  
+`patch -u Python-3.9.4/Modules/posixmodule.c -i config/posixmodule-3.9.4.patch`
 
 Now configure the source  
 **If configuring for another system other than x86_x64 Linux (linux64), see the various platform-specific tips in** [configs directory](config) 
