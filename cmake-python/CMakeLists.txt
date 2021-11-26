@@ -204,9 +204,9 @@ set(extra_modules
 		#codecs/encodings
 		Modules/_codecsmodule.c
 		
-		#os modules (posix) 
-		#this module has been patched with mingw support (ln 298 - 300)
-		${CMAKE_SOURCE_DIR}/config/posixmodule.c
+		#os modules (posix)
+		#ensure you have patched before building!	
+		Modules/posixmodule.c
 		
 		#and that's it! Py_Main and Py_Initialize should now work!
 
