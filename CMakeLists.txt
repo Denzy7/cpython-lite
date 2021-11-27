@@ -51,11 +51,17 @@ ${conf_dir}
 #Directory to find pyconfig.h
 add_subdirectory(${python_version})
 
+#Basic Python interprator
 add_executable(py-lite main/python.c)
+
+#Basic embedding with C
+add_executable(embed main/embed.c)
 
 #droid and win32 dont need any custom links, unix needs m(if used), pthread, dl and util
 if(WIN32 OR ANDROID)
 	target_link_libraries(py-lite ${python} )
+	target_link_libraries(embed ${python} )
 elseif(UNIX)
 	target_link_libraries(py-lite ${python} m pthread util dl)
+	target_link_libraries(embed ${python} m pthread util dl)
 endif()
