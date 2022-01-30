@@ -48,15 +48,17 @@ ${CMAKE_SOURCE_DIR}/${python_version}/Python
 ${CMAKE_SOURCE_DIR}/${python_version}/Modules
 ${conf_dir}
 )
-#Directory to find pyconfig.h
-add_subdirectory(${python_version})
+
+#cmake with python
+include(cmake-python/CMakeLists.txt)
+link_directories(${CMAKE_BINARY_DIR}/cmake-python)
 
 #Basic Python interprator
 add_executable(py-lite main/python.c)
 
 #Basic embedding with C
 add_executable(embed main/embed.c)
-
+message("py : ${python}")
 #droid and win32 dont need any custom links, unix needs m(if used), pthread, dl and util
 if(WIN32 OR ANDROID)
 	target_link_libraries(py-lite ${python} )

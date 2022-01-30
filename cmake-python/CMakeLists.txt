@@ -1,3 +1,5 @@
+set(PYSRCDIR ${CMAKE_SOURCE_DIR}/${python_version})
+
 #the loader used to load static libraries (.dll, .so)
 if(WIN32)
 	set(lib_loader dynload_win.c)
@@ -238,16 +240,18 @@ if(WIN32)
 		)
 endif()	
 
+set(PYSRCS
+	#comment this out to remove extra modules from build (use with caution)
+	${modules_config}
+	)
+
+foreach(PYSRC IN LISTS default_modules parser default_python python_objects extra_modules)
+	list(APPEND PYSRCS "${PYSRCDIR}/${PYSRC}")
+endforeach()
+
 #add the infamous python library
 add_library(${python}
-		${default_modules} 
-		${parser} 
-		${default_python} 
-		${python_objects} 
-		${extra_modules} 
-		
-		#comment this out to remove extra modules from build (use with caution)
-		${modules_config}
+		${PYSRCS}
 		)
 
 
