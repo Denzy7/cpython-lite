@@ -18,8 +18,6 @@ You can also clone this repository recursively (which may take a long time)
 `git clone --recursive https://github.com/Denzy7/cpython-lite`  
 If you cloned recursively adjust CMakeLists.txt to point where you cloned python. Otherwise, change the version numbers to the version of the downloaded and extracted tarball.
 
-Copy [the CMakeLists.txt](cmake-python/CMakeLists.txt) to the directory with python (symlinks also work if on a Linux system)  
-`ln -s <full-path-to-cmakelists.txt> <full-path-to-python-directory>` 
 
 Patch posixmodule.c if you will be compiling on MinGW  
 `patch -u Python-3.9.4/Modules/posixmodule.c -i config/posixmodule-3.9.4.patch`
