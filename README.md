@@ -25,7 +25,9 @@ Patch posixmodule.c if you will be compiling on MinGW
 Now configure the source  
 **If configuring for another system other than x86_x64 Linux (linux64), see the various platform-specific tips in** [configs directory](config) 
 
-`cmake -S . -B <out-of-tree-build-directory>`
+`cmake -S . -B <out-of-tree-build-directory> -Dpyver=<python-version-using>`  
+e.g.  
+`cmake -S . -B <out-of-tree-build-directory> -Dpyver=3.9.4`
  
 This checks if valid configuration files are available for the system you want to build for. Check for valid config files in the [configs directory](config/)  
 
