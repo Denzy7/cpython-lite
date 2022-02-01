@@ -5,10 +5,11 @@ project(LibPython VERSION 0.1)
 #flags
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DPy_BUILD_CORE")
 
-#punch in number in the order of Python-x.x.x from extracted tarball (tar.gz for windows folk)
-set(python_version_major 3)
-set(python_version_minor 9)
-set(python_version_build 4)
+string(REPLACE "." ";" pyver_list ${pyver})
+
+list(GET pyver_list 0 python_version_major)
+list(GET pyver_list 1 python_version_minor)
+list(GET pyver_list 2 python_version_build)
 
 #set to where an extracted tar of python is
 set(python_version Python-${python_version_major}.${python_version_minor}.${python_version_build})
