@@ -4,7 +4,9 @@ project(LibPython VERSION 0.1)
 
 #flags
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DPy_BUILD_CORE")
-
+if(NOT DEFINED pyver)
+	message(FATAL_ERROR "define python version -Dpyver=major.minor.build")
+endif()
 string(REPLACE "." ";" pyver_list ${pyver})
 
 list(GET pyver_list 0 python_version_major)
