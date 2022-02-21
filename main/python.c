@@ -2,7 +2,7 @@
 
 #include "Python.h"
 
-#define bootstrap_d "bd"
+#define bootstrap_d "bootstrap"
 
 void init_py()
 {
@@ -12,7 +12,7 @@ void init_py()
     Py_IgnoreEnvironmentFlag = 1;
 
     printf("loading libs\n");
-	//Try to create a test file to see if directory is writable
+    //Try to create a test file to see if directory is writable
     printf("mock file\n");
     const char* bootstrap_d2 = bootstrap_d "/ok.txt";
     
@@ -32,10 +32,10 @@ void init_py()
     
     //Decode locale
     wchar_t* home = Py_DecodeLocale(bootstrap_d, NULL);
-	//Set path to bootstrap
+    //Set path to bootstrap
     Py_SetPythonHome(home);
     Py_SetPath(home);
-	//Start interprator
+    //Start interprator
     Py_Initialize();
 
    //Import hook for embedding python and wanting to hardcode packages (optional)
