@@ -11,16 +11,14 @@ Tested on an Arch Linux system using:
 - GCC gcc 11.1.0-1 (Linux64)
 - Clang 12.0.1 (Android armeabi-v7a)
 
+Tested on Windows 7 using MinGW from [WinLibs](https://winlibs.com). (*The [official installer](https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/) is incredibly old and doesn't have libraries to build modern Python*)
+
 Download an official tarball from [the Python website](https://www.python.org/downloads/source/) (which is recommended)  
-[Version 3.9.4](https://www.python.org/ftp/python/3.9.4/Python-3.9.4.tar.xz) has been thoroughly tested and is the recommended tarball.
+[Version 3.9.*'s](https://www.python.org/ftp/python/) have been thoroughly tested and are the recommended tarball.
 
 You can also clone this repository recursively (which may take a long time)  
 `git clone --recursive https://github.com/Denzy7/cpython-lite`  
 If you cloned recursively adjust CMakeLists.txt to point where you cloned python. Otherwise, change the version numbers to the version of the downloaded and extracted tarball.
-
-
-Patch posixmodule.c if you will be compiling on MinGW  
-`patch -u Python-3.9.4/Modules/posixmodule.c -i config/posixmodule-3.9.4.patch`
 
 Now configure the source  
 **If configuring for another system other than x86_x64 Linux (linux64), see the various platform-specific tips in** [configs directory](config) 
@@ -28,6 +26,13 @@ Now configure the source
 `cmake -S . -B <out-of-tree-build-directory> -Dpyver=<python-version-using>`  
 e.g.  
 `cmake -S . -B <out-of-tree-build-directory> -Dpyver=3.9.4`
+
+Patch posixmodule.c if you will be compiling on MinGW (Linux):
+`patch -u Python-<pyver>/Modules/posixmodule.c -i config/posixmodule-<pyver>.patch`
+
+If on Windows, adjust `Modules/posixmodule.c` to include the few lines in `config/posixmodule-<pyver>.patch`
+
+Windows users need to also specify `-G "MinGW Makefiles"`. Please note the location where you extracted MinGW and add `<LOCATION>/bin` to your path as environment variable. `<LOCATION>/bin` should contain `mingw32-make.exe`  
  
 This checks if valid configuration files are available for the system you want to build for. Check for valid config files in the [configs directory](config/)  
 
