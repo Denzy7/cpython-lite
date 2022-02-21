@@ -36,7 +36,7 @@ extern PyObject* PyInit_itertools(void);
 extern PyObject* PyInit__collections(void);
 extern PyObject* PyInit__sre(void);
 extern PyObject* PyInit_math(void);
-
+extern PyObject* PyInit_atexit(void);
 
 /* -- ADDMODULE MARKER 1 -- */
 
@@ -64,7 +64,7 @@ struct _inittab _PyImport_Inittab[] = {
     {"_collections", PyInit__collections},
     {"_sre", PyInit__sre},
     {"math", PyInit_math},
-
+    {"atexit", PyInit_atexit},
 /* -- ADDMODULE MARKER 2 -- */
 
 

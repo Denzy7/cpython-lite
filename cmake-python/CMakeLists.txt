@@ -220,6 +220,8 @@ set(extra_modules
 
 		#add any more modules to bake into python here...(optional)
 
+		Modules/atexitmodule.c
+
 		#math module
 		Modules/mathmodule.c
 		Modules/_math.c
@@ -236,7 +238,6 @@ if(WIN32)
 		PC/dl_nt.c
 		PC/winreg.c
 		Modules/_winapi.c
-		Modules/atexitmodule.c
 		)
 endif()	
 
