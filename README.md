@@ -25,7 +25,9 @@ Now configure the source
 
 `cmake -S . -B <out-of-tree-build-directory> -Dpyver=<python-version-using>`  
 e.g.  
-`cmake -S . -B <out-of-tree-build-directory> -Dpyver=3.9.4`
+`cmake -S . -B <out-of-tree-build-directory> -Dpyver=3.9.4`  
+
+This checks if valid configuration files are available for the system you want to build for. Check for valid config files in the [configs directory](config/)  
 
 Patch posixmodule.c if you will be compiling on MinGW (Linux):
 `patch -u Python-<pyver>/Modules/posixmodule.c -i config/posixmodule-<pyver>.patch`
@@ -33,8 +35,6 @@ Patch posixmodule.c if you will be compiling on MinGW (Linux):
 If on Windows, adjust `Modules/posixmodule.c` to include the few lines in `config/posixmodule-<pyver>.patch`
 
 Windows users need to also specify `-G "MinGW Makefiles"`. Please note the location where you extracted MinGW and add `<LOCATION>/bin` to your path as environment variable. `<LOCATION>/bin` should contain `mingw32-make.exe`  
- 
-This checks if valid configuration files are available for the system you want to build for. Check for valid config files in the [configs directory](config/)  
 
 If configuration succeeds, build the source  
 `cmake --build <out-of-tree-build-directory>`  
