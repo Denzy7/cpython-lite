@@ -6,9 +6,9 @@
 
 void init_py()
 {
-   //Python flags to prevent loading some unneeded stuff
-    Py_NoSiteFlag = 1;
-    Py_FrozenFlag = 1;
+    //Python flags to prevent loading some unneeded stuff
+    //Py_NoSiteFlag = 1;
+    //Py_FrozenFlag = 1;
     Py_IgnoreEnvironmentFlag = 1;
 
     printf("loading libs\n");
@@ -33,6 +33,7 @@ void init_py()
     //Decode locale
     wchar_t* home = Py_DecodeLocale(bootstrap_d, NULL);
 	//Set path to bootstrap
+    Py_SetPythonHome(home);
     Py_SetPath(home);
 	//Start interprator
     Py_Initialize();
