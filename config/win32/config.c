@@ -70,7 +70,6 @@ struct _inittab _PyImport_Inittab[] = {
     {"winreg", PyInit_winreg},
     {"atexit", PyInit_atexit},
 
-
 /* -- ADDMODULE MARKER 2 -- */
 
 

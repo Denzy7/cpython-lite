@@ -1,4 +1,4 @@
-set(PYSRCDIR ${CMAKE_SOURCE_DIR}/${python_version})
+set(PYSRCDIR ${CMAKE_CURRENT_SOURCE_DIR}/${python_version})
 
 #the loader used to load static libraries (.dll, .so)
 if(WIN32)
@@ -227,12 +227,12 @@ set(extra_modules
 		
 #file with modules configuration. Edit this file to add/remove modules to be baked
 #this is also a chance to patch on top of Win32 modules to add some important stuff
-set(modules_config ${CMAKE_SOURCE_DIR}/${conf_dir}/config.c)
+set(modules_config ${CMAKE_CURRENT_SOURCE_DIR}/${conf_dir}/config.c)
 if(WIN32)
 	list(APPEND default_modules
 	       	Modules/_io/winconsoleio.c
 		#frozen_dllmain.c causes linking errors mingw
-		#PC/frozen_dllmain.c
+	 	#PC/frozen_dllmain.c
 		PC/dl_nt.c
 		PC/winreg.c
 		Modules/_winapi.c

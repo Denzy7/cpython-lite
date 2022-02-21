@@ -4,6 +4,9 @@ project(LibPython VERSION 0.1)
 
 #flags
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DPy_BUILD_CORE")
+if(NOT WIN32)
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
+endif()
 if(NOT DEFINED pyver)
 	message(FATAL_ERROR "define python version -Dpyver=major.minor.build")
 endif()
@@ -45,10 +48,10 @@ message(STATUS "Using conf_dir ${conf_dir}")
 
 #inclues
 include_directories(
-${CMAKE_SOURCE_DIR}/${python_version}/Include
-${CMAKE_SOURCE_DIR}/${python_version}/Include/internal
-${CMAKE_SOURCE_DIR}/${python_version}/Python
-${CMAKE_SOURCE_DIR}/${python_version}/Modules
+${CMAKE_CURRENT_SOURCE_DIR}/${python_version}/Include
+${CMAKE_CURRENT_SOURCE_DIR}/${python_version}/Include/internal
+${CMAKE_CURRENT_SOURCE_DIR}/${python_version}/Python
+${CMAKE_CURRENT_SOURCE_DIR}/${python_version}/Modules
 ${conf_dir}
 )
 

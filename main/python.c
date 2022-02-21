@@ -2,7 +2,7 @@
 
 #include "Python.h"
 
-#define bootstrap_d "bootstrap"
+#define bootstrap_d "bd"
 
 void init_py()
 {
