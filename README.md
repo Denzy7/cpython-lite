@@ -13,7 +13,7 @@ Tested on an Arch Linux system using:
 
 Tested on Windows 7 using MinGW from [WinLibs](https://winlibs.com). (*The [official installer](https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/) is incredibly old and doesn't have libraries to build modern Python*)
 
-Download an official tarball from [the Python website](https://www.python.org/downloads/source/) (which is recommended)  
+Download an official tarball from [the Python website](https://www.python.org/downloads/source/)
 [Version 3.9.*'s](https://www.python.org/ftp/python/) have been thoroughly tested and are the recommended tarball.
 
 Now configure the source  
