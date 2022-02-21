@@ -51,3 +51,7 @@ If you want to create a new platform config files, you will need a copy of the e
 Its also possible for UNIX platforms to share `config.c` files. Be sure to use the `config.c` file for modules. Win32 needs the `config.c` [here](config/win32) to initialize Windows specific modules.  
 
 The [library CMakeLists.txt](cmake-python/CMakeLists.txt) can offer some insights and tips for porting.
+
+# known issues
+
+- Causes **SIGSEGV** on Linux if you compile an extension and import it with `py-lite` (*extension will work with your distro's python installation however*)
