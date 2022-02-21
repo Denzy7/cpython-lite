@@ -16,10 +16,6 @@ Tested on Windows 7 using MinGW from [WinLibs](https://winlibs.com). (*The [offi
 Download an official tarball from [the Python website](https://www.python.org/downloads/source/) (which is recommended)  
 [Version 3.9.*'s](https://www.python.org/ftp/python/) have been thoroughly tested and are the recommended tarball.
 
-You can also clone this repository recursively (which may take a long time)  
-`git clone --recursive https://github.com/Denzy7/cpython-lite`  
-If you cloned recursively adjust CMakeLists.txt to point where you cloned python. Otherwise, change the version numbers to the version of the downloaded and extracted tarball.
-
 Now configure the source  
 **If configuring for another system other than x86_x64 Linux (linux64), see the various platform-specific tips in** [configs directory](config) 
 
